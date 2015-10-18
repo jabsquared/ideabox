@@ -5,11 +5,11 @@ String.prototype.capitalize = function() {
     });
 };
 
-function recapData(data) {
+function recapData(data, group) {
   // body...
   for (var i = 0; i < data.concepts.length; i++) {
     data.concepts[i].concept = data.concepts[i].concept.label;
-    data.concepts[i].group = data.concepts[0].concept;
+    data.concepts[i].group = group;
   }
   return data;
 }
@@ -17,11 +17,10 @@ var userData;
 
 $(document)
   .ready(function() {
-    var word;
     $('#submit-btn')
       .click(function() {
         // console.log("Click!");
-        word = $('#word')
+        var word = $('#word')
           .val();
 
         $.get("https://ideabox.mybluemix.net/p/" +
@@ -31,10 +30,10 @@ $(document)
           function(data) {
             // data = JSON.parse(data);
             // console.log(JSON.parse(data));
-            var js = JSON.parse(data);
+            var js = JSON.parse(data, word);
             console.log(js);
             if (!js.error) {
-              js = recapData(js);
+              js = recapData(js, word);
               if (!userData) {
                 userData = js;
               } else {
@@ -53,11 +52,7 @@ $(document.body)
   .delegate('input:text', 'keypress', function(e) {
     if (e.which === 13) { // if is enter
       e.preventDefault(); // don't submit form
-      var word;
-      // do what you want here
-
-      // console.log("Click!");
-      word = $('#word')
+      var word = $('#word')
         .val();
 
       $.get("https://ideabox.mybluemix.net/p/" +
@@ -71,7 +66,7 @@ $(document.body)
           var js = JSON.parse(data);
           console.log(js);
           if (!js.error) {
-            js = recapData(js);
+            js = recapData(js, word);
             if (!userData) {
               userData = js;
             } else {
