@@ -1,65 +1,116 @@
-body .container{
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Roboto Light", "Segoe UI Web Light", "Segoe UI Light", "Segoe UI Web Regular", "Segoe UI", Helvetica, Arial, sans-serif;
-  /*margin: 1em;*/
-  background: #293950;
-  color: #ecf0f0;
+* {
+    -webkit-transition: all 0.45s ease 0s;
+    -moz-transition: all 0.45s ease 0s;
+    -ms-transition: all 0.45s ease 0s;
+    -o-transition: all 0.45s ease 0s;
+    transition: all 0.45s ease 0s;
 }
-section {
-  margin: 0 auto;
+
+text {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-h1 {
-  font-weight: normal;
-  font-size: 2.4em;
-  margin-bottom: 0;
+
+footer {
+    /*height: 60px;*/
+    background-color: #CC3232;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
-a {
-  color: gold;
+
+.wcolor {
+    color: white;
 }
+
+body {
+    background-color: #FF4C4C;
+    background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/173024/wallpaper.jpg);
+    background-size: cover;
+    -webkit-animation:anim 4s infinite linear;
+    -moz-animation:anim 4s infinite ease-in;
+    -ms-animation:anim 4s infinite ease-in;
+    animation:anim 4s infinite ease-in;∫
+}
+
+.node:hover,
+.node:focus,
+.node:active {
+    width: 500px;
+    height: 500px;
+}
+
+.hcenter {
+    text-align: center;
+}
+
+.clip-text {
+  font-size: 90px;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  margin: .25em;
+  padding: .5em .75em;
+  text-align: center;
+  color: #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  -ms-background-clip: text;
+  -ms-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.clip-text:before,
+.clip-text:after {
+  position: absolute;
+  content: '';
+}
+
+.clip-text:before {
+  z-index: -2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: inherit;
+  background-size: cover;
+  -webkit-animation:anim 3s infinite ease-in;
+  -moz-animation:anim 3s infinite ease-in;
+  -ms-animation:anim 3s infinite ease-in;
+  animation:anim 3s infinite ease-in;
+}
+
+/*.clip-text:after {
+  position: absolute;
+  z-index: -1;
+  top: .125em;
+  right: .125em;
+  bottom: .125em;
+  left: .125em;
+  background-color: #ffffff;
+}*/
 /*
-ISO Country code by regions: http://www.geohive.com/earth/gen_codes.aspx
-*/
+.clip-text_one {
+  background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/173024/wallpaper.jpg);
+  background-size: cover;
+  -webkit-animation:anim 3s infinite linear;
+  -moz-animation:anim 3s infinite ease-in;
+  -ms-animation:anim 3s infinite ease-in;
+  animation:anim 3s infinite ease-in;
+}*/
 
-/* Northern America */
-.bm, .ca, .gl, .pm, .us,
-.noram {fill: #DF4949; background: #DF4949;}
+@-webkit-keyframes anim
+{0%{background-position: top;}50%{background-position: bottom;}100%{background-position: top;}}
+@-moz-keyframes anim
+{0%{background-position: top;}50%{background-position: bottom;}100%{background-position: top;}}
+@-ms-keyframes anim
+{0%{background-position: top;}50%{background-position: bottom;}100%{background-position: top;}}
+@keyframes anim
+{0%{background-position: top;}50%{background-position: bottom;}100%{background-position: top;}}
 
-/* Latin America and the Caribbean */
-.ai, .ag, .aw, .bs, .bb, .bq, .vg, .ky, .cu, .cw, .dm, .do, .gp, .ht, .jm, .mq, .ms, .pr, .bl, .kn, .lc, .mf, .vc, .sx, .tt, .vi,
-.bz, .crr, .sv, .gt, .hn, .mx, .ni, .pa,
-.ar, .bo, .br, .cl, .co, .ec, .fk, .gf, .gy, .py, .pe, .sr, .uy, .ve,
-.latam {fill: #E27A3F; background: #E27A3F;}
-
-/* Europe */
-.by, .bg, .cz, .hu, .md, .pl, .ro, .ru, .sk, .ua,
-.ax, .dk, .ee, .fo, .fi, .gg, .is, .ie, .je, .lv, .lt, .im, .no, .sj, .se, .gb,
-.al, .ad, .ba, .hr, .gi, .gr, .va, .it, .mk, .mt, .me, .pt, .sm, .rs, .si, .es,
-.at, .be, .fr, .de, .li, .lu, .mc, .nl, .ch,
-.eu { fill: #EFC94C; background: #EFC94C;}
-
-/* Asia */
-.kz, .kg, .tj, .tm, .uz,
-.cn, .hk, .mo, .jp, .kp, .kr, .mn, .tw,
-.af, .bd, .bt, .in, .ir, .mv, .np, .pk, .lk,
-.bn, .kh, .id, .la, .my, .mm, .ph, .sg, .th, .tl, .vn,
-.am, .az, .bh, .cy, .ge, .iq, .il, .jo, .kw, .lb, .ps, .om, .qa, .sa, .sy, .tr, .ae, .ye,
-.asia { fill: #9B59B6; background:  #9B59B6;}
-
-/* Oceania */
-.au, .cx, .cc, .nz, .nf,
-.fj, .nc, .pg, .sb, .vu,
-.gu, .ki, .mh, .fm, .nr, .mp, .pw,
-.as, .ck, .pf, .nu, .pn, .ws, .tk, .to, .tv, .wf,
-.oceania {fill: #3498db; background: #3498db;}
-
-/* Africa */
-.bi, .km, .dj, .er, .et, .ke, .mg, .mw, .mu, .yt, .mz, .re, .rw, .sc, .so, .tz, .ug, .zm, .zw,
-.ao, .cm, .cf, .td, .cg, .cd, .gq, .ga, .st,
-.dz, .eg, .ly, .ma, .ss, .sd, .tn, .eh,
-.bw, .ls, .na,  .za, .sz,
-.bj, .bf, .cv, .gm, .gh, .gn, .gw, .lr, .ml, .mr, .ne, .ng, .sh, .sn, .sl, .tg,
-.africa {fill: #F495A3; background: #F495A3;}
-
-/* Unclassified */
-.aq, .bv, .io, .tf, .hm, .gs, .um,
-.a1, .a2, .o1,
-.other { fill: #45B29D; background: #45B29D;}
+.theBox {
+  font-size: 50px;
+  color: white;
+}
