@@ -6,8 +6,9 @@ String.prototype.capitalize = function() {
 };
 function recapData(data) {
   // body...
-  for (var i = 0; i < data.concepts.length; i++) {
+  for (var i = 1; i < data.concepts.length; i++) {
     data.concepts[i].concept = data.concepts[i].concept.label;
+    data.concepts[i].group = data.concepts[0].concept;
   }
   return data;
 }

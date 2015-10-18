@@ -56,13 +56,14 @@
 
 <body>
 
-  <div class="container">
+  <!-- <div class="container">
     <section id="graph"></section>
   </div>
-
+ -->
 
   <!-- create container element for visualization -->
-  <!-- <div id="viz"></div> -->
+
+  <div id="viz"></div>
 
   <footer class="footer">
     <div class="container">
@@ -84,30 +85,16 @@
   <script src="js/index2.js"></script>
 
   <script>
-    // sample data array
-    var sample_data = [{
-        "score": 0.9998348,
-        "concept": {
-          "id": "/graphs/wikipedia/en-20120601/concepts/Banana",
-          "label": "Banana"
-        }
-      }, {
-        "score": 0.9176801,
-        "concept": {
-          "id": "/graphs/wikipedia/en-20120601/concepts/Districts_of_Madagascar",
-          "label": "Districts of Madagascar"
-        }
-      }];
-      // instantiate d3plus
-    var visualization = d3plus.viz()
-      .container("#viz") // container DIV to hold the visualization
-      .data(sample_data) // data to use with the visualization
-      .type("bubbles") // visualization type
-      .id(["concept.label"]) // nesting keys
-      .depth(1) // 0-based depth
-      .size("score") // key name to size bubbles
-      .color("concept.label") // color by each group
-      .draw() // finally, draw the visualization!
+    // // instantiate d3plus
+    // var visualization = d3plus.viz()
+    //   .container("#viz") // container DIV to hold the visualization
+    //   .data(sample_data) // data to use with the visualization
+    //   .type("bubbles") // visualization type
+    //   .id(["concept.label"]) // nesting keys
+    //   .depth(1) // 0-based depth
+    //   .size("score") // key name to size bubbles
+    //   .color("concept.label") // color by each group
+    //   .draw() // finally, draw the visualization!
   </script>
 
 </body>
