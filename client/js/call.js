@@ -4,7 +4,13 @@ String.prototype.capitalize = function() {
       return m.toUpperCase();
     });
 };
-
+function recapData(data) {
+  // body...
+  for (var i = 0; i < data.concepts.length; i++) {
+    data.concepts[i].concept = data.concepts[i].concept.label;
+  }
+  return data;
+}
 var userData;
 
 $(document)
@@ -24,6 +30,7 @@ $(document)
             var js = JSON.parse(data);
             console.log(js);
             if (!js.error) {
+              js = recapData(js);
               if (!userData) {
                 userData = js;
               } else {

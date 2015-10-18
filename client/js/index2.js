@@ -1,6 +1,7 @@
 var render = function(json_data) {
   // console.log(json_data);
-  d3.select("svg").remove();
+  d3.select("svg")
+    .remove();
   var diameter = 540,
     format = d3.format(',d'),
     color = d3.scale.category20c();
@@ -29,6 +30,9 @@ var render = function(json_data) {
       return 'translate(' + d.x + ',' + d.y + ')';
     });
 
+  d3plus.textwrap()
+    .container(svg.selectAll('.node'))
+    .draw();
 
   node.append('circle')
     .attr('r', function(d) {
@@ -36,6 +40,22 @@ var render = function(json_data) {
     })
     .style('fill', function(d) {
       return color(d.packageName);
+    })
+    .on("mouseover", function(d) {
+      d3.select(this)
+        .transition()
+        .ease("quad")
+        .duration("360")
+        .attr("r", 100);
+    })
+    .on("mouseout", function(d) {
+      d3.select(this)
+        .transition()
+        .ease("quad")
+        .duration("360")
+        .attr("r", function(d) {
+          return d.r;
+        });
     });
 
   node.append('text')
@@ -50,28 +70,11 @@ var render = function(json_data) {
   function classes(root) {
     var classes = [];
 
-    // function recurse(concept, node) {
-    //     if (node.children) {
-    //         node.children.forEach(function(child) {
-    //             recurse(node.concept.name, child);
-    //         });
-    //     } else {
-    //         classes.push({
-    //             packageName: name,
-    //             className: concept.name,
-    //             value: node.score * 1000,
-    //         });
-    //     }
-    // }
-
-    // console.log(json_data);
-    // recurse(null, root);
-
     json_data.concepts.forEach(function(child) {
       // body...
       classes.push({
-        packageName: child.concept.label,
-        className: child.concept.label,
+        packageName: child.concept,
+        className: child.concept,
         value: child.score,
       });
     });
