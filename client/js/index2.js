@@ -40,6 +40,7 @@
 
         node.append('text')
             .attr('dy', '.3em')
+            .attr("fill", "white")
             .style('text-anchor', 'middle')
             .text(function(d) {
                 return d.className.substring(0, d.r / 3);
