@@ -1,0 +1,19 @@
+{
+  "name": "ideabox",
+  "version": "1.0.0",
+  "description": "Brainstorming tool with Concept Insight",
+  "main": "lab.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "brainstorm",
+    "concept",
+    "insight"
+  ],
+  "author": "lab",
+  "license": "SEE ../LICENSE",
+  "dependencies": {
+    "nodemon": "^1.7.1"
+  }
+}
