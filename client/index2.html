@@ -2,119 +2,100 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
-  <link href="http://fonts.googleapis.com/css?family=Montserrat:700|Amatic+SC" rel="stylesheet" type="text/css">
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:700|Amatic+SC' rel='stylesheet' type='text/css'>
 </head>
 
-<style>
-  * {
-    -webkit-transition: all 0.45s ease 0s;
-    -moz-transition: all 0.45s ease 0s;
-    -ms-transition: all 0.45s ease 0s;
-    -o-transition: all 0.45s ease 0s;
-    transition: all 0.45s ease 0s;
-  }
-
-  text {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-
-  #viz {
-    height: 90vh;
-  }
-
-  footer {
-    /*height: 60px;*/
-    background-color: #CC3232;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-  }
-
-  .wcolor {
-    color: white;
-  }
-
-  body {
-    background-color: #FF4C4C;
-  }
-</style>
 
 
 <body>
 
-  <!-- <div class="container">
+    <!-- <div class="container">
     <section id="graph"></section>
   </div>
  -->
 
-  <!-- create container element for visualization -->
+    <!-- create container element for visualization -->
 
 
 
-  <div id="viz"></div>
+    <div id="viz"></div>
 
 
-  <div align="center" style="margin-top:120px;">
-    <div class="clip-text clip-text_one">Zydeco</div>
-    <div class="hcenter">
 
-      <div class="col-lg-12">
-        <div class="col-md-12">
-          <h1 class="theBox">IdeaBox</h1>
+
+
+    <div align="center" style="margin-top:120px;">
+        <div class="clip-text clip-text_one">Zydeco</div>
+        <div class="hcenter">
+
+            <div class="col-lg-12">
+                <div class="col-md-12">
+                    <h1 class="theBox">IdeaBox</h1>
+                </div>
+
+
+            </div>
         </div>
 
-
-      </div>
     </div>
 
-  </div>
-
-  <div align="center">
-    <a href="http://www.wifeo.com/code" style="text-decoration:none;">
-      <div style=" padding:160px; color:#b22e08; font-weight:300; font-size:30px; font-family:'Roboto';padding-top:20px;">
-        <br>
-
-
-        <font style="font-weight:400; color:#6b1901;">
-          <br>
-        </font>
-      </div>
-    </a>
-  </div>
-
-
-
-  <footer class="footer">
-    <div class="container">
-      <p class="text-muted">
-        <form role="form">
-          <div class="form-group">
-            <label for="usr" class="wcolor">Idea, Concept, or Thought:</label>
-            <input type="text" class="form-control" id="word">
-            <a id="submit-btn" type="submit" class="btn btn-info btn-block btn-md">Inspires Me!</a>
-          </div>
-        </form>
-      </p>
+    <div align="center">
+        <a href="#" style="text-decoration:none;">
+            <div style=" padding:160px; color:#b22e08; font-weight:300; font-size:30px; font-family:'Roboto';padding-top:20px;">
+                <br>
+                <font style="font-weight:400; color:#6b1901;">
+                    <br>
+                </font>
+            </div>
+        </a>
     </div>
-  </footer>
 
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-  <script src="http://www.d3plus.org/js/d3plus.js"></script>
-  <script src="js/call.js"></script>
-  <script src="js/index2.js"></script>
+
+
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="usr" class="wcolor">Idea, Concept, or Thought:</label>
+                        <input type="text" class="form-control" id="word">
+                        <a id="submit-btn" type="submit" class="btn btn-info btn-block btn-md">Submit</a>
+                    </div>
+                </form>
+            </p>
+        </div>
+    </footer>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="http://www.d3plus.org/js/d3plus.js"></script>
+    <script src="js/call.js"></script>
+    <script src="js/index2.js"></script>
+
+    <script>
+        // // instantiate d3plus
+        // var visualization = d3plus.viz()
+        //   .container("#viz") // container DIV to hold the visualization
+        //   .data(sample_data) // data to use with the visualization
+        //   .type("bubbles") // visualization type
+        //   .id(["concept.label"]) // nesting keys
+        //   .depth(1) // 0-based depth
+        //   .size("score") // key name to size bubbles
+        //   .color("concept.label") // color by each group
+        //   .draw() // finally, draw the visualization!
+    </script>
 
 </body>
 
