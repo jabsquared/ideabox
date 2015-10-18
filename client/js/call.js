@@ -4,6 +4,7 @@ String.prototype.capitalize = function() {
       return m.toUpperCase();
     });
 };
+
 function recapData(data) {
   // body...
   for (var i = 0; i < data.concepts.length; i++) {
@@ -17,6 +18,7 @@ var userData;
 $(document)
   .ready(function() {
     var word;
+
     $('#submit-btn')
       .click(function() {
         // console.log("Click!");
@@ -24,7 +26,9 @@ $(document)
           .val();
 
         $.get("https://ideabox.mybluemix.net/p/" +
-          word.capitalize(),
+          word.capitalize()
+          .split(' ')
+          .join('_'),
           function(data) {
             // data = JSON.parse(data);
             // console.log(JSON.parse(data));

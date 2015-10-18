@@ -30,6 +30,10 @@
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 
+  #viz {
+    height: 90vh;
+  }
+
   footer {
     /*height: 60px;*/
     background-color: #CC3232;
@@ -46,12 +50,6 @@
     background-color: #FF4C4C;
   }
 
-  .node:hover,
-  .node:focus,
-  .node:active {
-    width: 500px;
-    height: 500px;
-  }
 </style>
 
 <body>
@@ -79,23 +77,12 @@
     </div>
   </footer>
 
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+
+  <script src="http://www.d3plus.org/js/d3.js"></script>
   <script src="http://www.d3plus.org/js/d3plus.js"></script>
   <script src="js/call.js"></script>
   <script src="js/index2.js"></script>
 
-  <script>
-    // // instantiate d3plus
-    // var visualization = d3plus.viz()
-    //   .container("#viz") // container DIV to hold the visualization
-    //   .data(sample_data) // data to use with the visualization
-    //   .type("bubbles") // visualization type
-    //   .id(["concept.label"]) // nesting keys
-    //   .depth(1) // 0-based depth
-    //   .size("score") // key name to size bubbles
-    //   .color("concept.label") // color by each group
-    //   .draw() // finally, draw the visualization!
-  </script>
 
 </body>
 
