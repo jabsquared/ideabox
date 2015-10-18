@@ -1,5 +1,6 @@
 applications:
 - services:
+  - Concept Insights-0b
   name: ideabox
   host: ideabox
   command: nodemon lab.js

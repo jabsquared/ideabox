@@ -1,34 +1,41 @@
-var hapi = require('hapi');
-var request = require('request');
+var socketio = require('socket.io');
+var restify = require('restify');
 
-// NOTE: Declare host and port
-var host = (process.env
-  .VCAP_APP_HOST || 'localhost');
-var port = (process.env
-  .VCAP_APP_PORT || 1314);
-
-var server = new hapi.Server();
-
-server.connection({
-  host: host,
-  port: port,
-});
+var server = restify.createServer();
+var io = socketio.listen(server.server);
 
 var minerva = require('./modulas/minerva');
 
-server.route({
-  method: 'POST',
-  path: '/question',
-  handler: function(req, reply) {
-    var question = req.payload.Body;
-    var options = minerva.options(question);
+server.use(restify.bodyParser());
 
-    request(options, function(error, response, body) {
-      reply(body);
-    });
-  }
+server.listen(process.env.VCAP_APP_PORT || 1314, function() {
+  console.log('%s listening at %s', server.name, server.url);
 });
 
-server.start(function() {
-  console.log('Hapi on ' + host + ':' + port);
+function postConcept(req, res, next) {
+  // body...
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'X-Requested-With');
+
+  var concept = req.params.c;
+
+  // Return back a package of related concept with weight
+  // request(options, function(error, response, body) {
+  //   res.send(200, body);
+  // });
+  console.log('RUNNING P!');
+  console.log(concept);
+  minerva.getConcepts(concept, 9, function(r){
+    console.log('RUNNING MINERVA');
+    console.log(JSON.stringify(r, null, 2));
+    res.send(200, JSON.stringify(r, null, 2));
+  });
+
+}
+
+server.get('/p/:c', postConcept);
+
+io.sockets.on('connection', function(socket) {
+  // Define a helper function to return the count.
+
 });
