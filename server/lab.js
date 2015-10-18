@@ -1,11 +1,9 @@
 var socketio = require('socket.io');
 var restify = require('restify');
-var request = require('request');
 
 var server = restify.createServer();
 var io = socketio.listen(server.server);
 
-var hekate = require('./modulas/hekate');
 var minerva = require('./modulas/minerva');
 
 server.use(restify.bodyParser());
@@ -25,8 +23,14 @@ function postConcept(req, res, next) {
   // request(options, function(error, response, body) {
   //   res.send(200, body);
   // });
+  console.log('RUNNING P!');
+  console.log(concept);
+  minerva.getConcepts(concept, 9, function(r){
+    console.log('RUNNING MINERVA');
+    console.log(JSON.stringify(r, null, 2));
+    res.send(200, JSON.stringify(r, null, 2));
+  });
 
-  res.send(200, concept);
 }
 
 server.get('/p/:c', postConcept);
