@@ -1,6 +1,7 @@
 var render = function(json_data) {
   // console.log(json_data);
-  var diameter = 450,
+  d3.select("svg").remove();
+  var diameter = 540,
     format = d3.format(',d'),
     color = d3.scale.category20c();
 

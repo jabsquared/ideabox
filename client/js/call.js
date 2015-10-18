@@ -5,6 +5,8 @@ String.prototype.capitalize = function() {
     });
 };
 
+var userData;
+
 $(document)
   .ready(function() {
     var word;
@@ -19,7 +21,13 @@ $(document)
           function(data) {
             // data = JSON.parse(data);
             // console.log(JSON.parse(data));
-            render(JSON.parse(data));
+            var js = JSON.parse(data);
+            if (!userData){
+              userData = js;
+            } else {
+              userData.concepts = userData.concepts.concat(js.concepts);
+            }
+            render(userData);
           });
       });
   });
