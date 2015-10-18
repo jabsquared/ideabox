@@ -12,9 +12,9 @@ $(document).ready(function() {
 
     $.get("https://ideabox.mybluemix.net/p/" +
         word.capitalize(), function(data) {
-        // console.log(data);
         data = JSON.parse(data);
-        render(data);
+        console.log(data);
+        render(JSON.stringify(data));
     });
   });
 });
