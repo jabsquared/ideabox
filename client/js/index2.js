@@ -66,7 +66,7 @@
         // }
 
         // recurse(null, root);
-        root.children.forEach(function(child) {
+        root.concepts.forEach(function(child) {
             // body...
             if(child.concept.name){
               classes.push({
