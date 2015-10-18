@@ -51,36 +51,36 @@ $(document)
 
 $(document.body)
   .delegate('input:text', 'keypress', function(e) {
-      if (e.which === 13) { // if is enter
-        e.preventDefault(); // don't submit form
-        var word;
-        // do what you want here
+    if (e.which === 13) { // if is enter
+      e.preventDefault(); // don't submit form
+      var word;
+      // do what you want here
 
-        // console.log("Click!");
-        word = $('#word')
-          .val();
+      // console.log("Click!");
+      word = $('#word')
+        .val();
 
-        $.get("https://ideabox.mybluemix.net/p/" +
+      $.get("https://ideabox.mybluemix.net/p/" +
 
-          word.capitalize()
-          .split(' ')
-          .join('_'),
-          function(data) {
-            // data = JSON.parse(data);
-            // console.log(JSON.parse(data));
-            var js = JSON.parse(data);
-            console.log(js);
-            if (!js.error) {
-              js = recapData(js);
-              if (!userData) {
-                userData = js;
-              } else {
-                userData.concepts = userData.concepts.concat(js.concepts);
-              }
-              render(userData);
+        word.capitalize()
+        .split(' ')
+        .join('_'),
+        function(data) {
+          // data = JSON.parse(data);
+          // console.log(JSON.parse(data));
+          var js = JSON.parse(data);
+          console.log(js);
+          if (!js.error) {
+            js = recapData(js);
+            if (!userData) {
+              userData = js;
             } else {
-              alert("NOT FOUND!");
+              userData.concepts = userData.concepts.concat(js.concepts);
             }
-          });
-      });
+            render(userData);
+          } else {
+            alert("NOT FOUND!");
+          }
+        });
+    };
   });
