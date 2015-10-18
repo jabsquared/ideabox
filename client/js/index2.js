@@ -1,6 +1,6 @@
 var render = function(json_data) {
-  console.log(json_data);
-  var diameter = 960,
+  // console.log(json_data);
+  var diameter = 450,
     format = d3.format(',d'),
     color = d3.scale.category20c();
 
@@ -15,41 +15,36 @@ var render = function(json_data) {
     .attr('height', diameter)
     .attr('class', 'bubble');
 
-  d3.json(json_data, function(error, root) {
-    if (error) {
-      throw error;
-    }
 
-    var node = svg.selectAll('.node')
-      .data(bubble.nodes(classes(root))
-        .filter(function(d) {
-          return !d.children;
-        }))
-      .enter()
-      .append('g')
-      .attr('class', 'node')
-      .attr('transform', function(d) {
-        return 'translate(' + d.x + ',' + d.y + ')';
-      });
+  var node = svg.selectAll('.node')
+    .data(bubble.nodes(classes(json_data))
+      .filter(function(d) {
+        return !d.children;
+      }))
+    .enter()
+    .append('g')
+    .attr('class', 'node')
+    .attr('transform', function(d) {
+      return 'translate(' + d.x + ',' + d.y + ')';
+    });
 
 
-    node.append('circle')
-      .attr('r', function(d) {
-        return d.r;
-      })
-      .style('fill', function(d) {
-        return color(d.packageName);
-      });
+  node.append('circle')
+    .attr('r', function(d) {
+      return d.r;
+    })
+    .style('fill', function(d) {
+      return color(d.packageName);
+    });
 
-    node.append('text')
-      .attr('dy', '.3em')
-      .attr("fill", "white")
-      .style('text-anchor', 'middle')
-      .text(function(d) {
-        return d.className.substring(0, d.r / 3);
+  node.append('text')
+    .attr('dy', '.3em')
+    .attr("fill", "white")
+    .style('text-anchor', 'middle')
+    .text(function(d) {
+      return d.className.substring(0, d.r / 3);
 
-      });
-  });
+    });
 
   // Returns a flattened hierarchy containing all leaf nodes under the root.
   function classes(root) {
@@ -69,8 +64,9 @@ var render = function(json_data) {
     //     }
     // }
 
-    console.log(json_data);
+    // console.log(json_data);
     // recurse(null, root);
+
     json_data.concepts.forEach(function(child) {
       // body...
       classes.push({
