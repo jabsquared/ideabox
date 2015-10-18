@@ -5,28 +5,28 @@
 
 'use strict';
 
-var cloudantAuth = {
-  usn: 'lab',
-  url: 'http://127.0.0.1:5984',
-  init: function(cred) {
-    return {
-      url: cred.url,
-      usn: cred.username,
-      pwd: cred.password,
-    };
-  },
-};
-
-var redisAuth = {
-  hst: 'lab',
-  init: function(cred) {
-    return {
-      prt: cred.port,
-      hst: cred.hostname,
-      pwd: cred.password,
-    };
-  },
-};
+// var cloudantAuth = {
+//   usn: 'lab',
+//   url: 'http://127.0.0.1:5984',
+//   init: function(cred) {
+//     return {
+//       url: cred.url,
+//       usn: cred.username,
+//       pwd: cred.password,
+//     };
+//   },
+// };
+//
+// var redisAuth = {
+//   hst: 'lab',
+//   init: function(cred) {
+//     return {
+//       prt: cred.port,
+//       hst: cred.hostname,
+//       pwd: cred.password,
+//     };
+//   },
+// };
 
 var ctiAuth = {
   url: 'lab',
@@ -56,8 +56,8 @@ if (process.env.VCAP_SERVICES) {
 
 // Export keys
 exports.auth = {
-  cloudant: cloudantAuth,
-  redis: redisAuth,
+  // cloudant: cloudantAuth,
+  // redis: redisAuth,
   cti: ctiAuth,
 };
 
