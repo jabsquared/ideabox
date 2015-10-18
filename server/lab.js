@@ -23,11 +23,11 @@ function postConcept(req, res, next) {
   // request(options, function(error, response, body) {
   //   res.send(200, body);
   // });
-  console.log('RUNNING P!');
-  console.log(concept);
+  // console.log('RUNNING P!');
+  // console.log(concept);
   minerva.getConcepts(concept, 9, function(r){
-    console.log('RUNNING MINERVA');
-    console.log(JSON.stringify(r, null, 2));
+    // console.log('RUNNING MINERVA');
+    // console.log(JSON.stringify(r, null, 2));
     res.send(200, r);
   });
 
@@ -39,8 +39,8 @@ function infoConcept(req, res, next) {
 
   var concept = req.params.c;
   minerva.getConcept (concept, function(r){
-    console.log('RUNNING MINERVA');
-    console.log(JSON.stringify(r, null, 2));
+    // console.log('RUNNING MINERVA');
+    // console.log(JSON.stringify(r, null, 2));
     res.send(200, r);
   });
 }

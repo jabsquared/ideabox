@@ -7,8 +7,9 @@ var render = function(json_data) {
     .type("bubbles") // visualization type
     .id(["group", "concept"]) // nesting keys
     .depth(1) // 0-based depth
+    // .background('#FF4C4C')
     .size("score") // key name to size bubbles
-    .color("group") // color by each group
+    .color("concept") // color by each group
     .draw() // finally, draw the visualization!
     .mouse({
       "click": function(d, viz) {
