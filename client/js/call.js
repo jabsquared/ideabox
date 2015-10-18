@@ -8,7 +8,7 @@ String.prototype.capitalize = function() {
 function recapData(data, group, ne) {
   // body...
   data.connections = [];
-  for (var i =  ne ? 1:0; i < data.concepts.length; i++) {
+  for (var i = ne ? 1 : 0; i < data.concepts.length; i++) {
     data.concepts[i].concept = data.concepts[i].concept.label;
     data.concepts[i].group = group;
     if (group !== data.concepts[i].concept) {
@@ -57,6 +57,19 @@ $(document)
         // console.log("Click!");
         getData($('#word')
           .val());
+      });
+    $('#insight-btn')
+      .click(function() {
+        getData($('#myModal')
+          .find('.modal-title')
+          .text()
+          .split(' ')
+          .join('_'), true);
+        $('#myModal').modal('hide');
+        // console.log($('#myModal')
+        //   .find('.modal-title')
+        //   .text());
+        // getData($('#word').val());
       });
   });
 
