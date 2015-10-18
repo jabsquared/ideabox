@@ -1,178 +1,113 @@
-* {
-  -webkit-transition: all 0.45s ease 0s;
-  -moz-transition: all 0.45s ease 0s;
-  -ms-transition: all 0.45s ease 0s;
-  -o-transition: all 0.45s ease 0s;
-  transition: all 0.45s ease 0s;
-}
+  * {
+    -webkit-transition: all 0.45s ease 0s;
+    -moz-transition: all 0.45s ease 0s;
+    -ms-transition: all 0.45s ease 0s;
+    -o-transition: all 0.45s ease 0s;
+    transition: all 0.45s ease 0s;
+  }
 
-text {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+  text {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
 
-footer {
-  /*height: 60px;*/
-  background-color: #CC3232;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-}
+  footer {
+    height: 18vh;
+    background-color: #CC3232;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
 
-.wcolor {
-  color: white;
-}
+  .wcolor {
+    color: white;
+  }
 
-body {
-<<<<<<< HEAD
-  background-color: #FF4C4C;
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/173024/wallpaper.jpg);
-  background-size: cover;
-  -webkit-animation: anim 4s infinite linear;
-  -moz-animation: anim 4s infinite ease-in;
-  -ms-animation: anim 4s infinite ease-in;
-  animation: anim 4s infinite ease-in;
-=======
+  body {
     background-color: #FF4C4C;
-    background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/173024/wallpaper.jpg);
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/173024/wallpaper.jpg);
     background-size: cover;
-    -webkit-animation:anim 4s infinite linear;
-    -moz-animation:anim 4s infinite ease-in;
-    -ms-animation:anim 4s infinite ease-in;
-    animation:anim 4s infinite ease-in;
->>>>>>> 12bee9147cd08ecd656dc6046b35a21bb92a3056
-}
-
-.node:hover, .node:focus, .node:active {
-  width: 500px;
-  height: 500px;
-}
-
-.hcenter {
-  text-align: center;
-}
-
-.clip-text {
-  font-size: 90px;
-  font-weight: bold;
-  position: relative;
-  display: inline-block;
-  margin: .25em;
-  padding: .5em .75em;
-  text-align: center;
-  color: #ffffff;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
-  -ms-background-clip: text;
-  -ms-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
-
-<<<<<<< HEAD
-.clip-text:before, .clip-text:after {
-=======
-/*.clip-text:before,
-.clip-text:after {
->>>>>>> 12bee9147cd08ecd656dc6046b35a21bb92a3056
-  position: absolute;
-  content: '';
-}*/
-/*
-.clip-text:before {
-  z-index: -2;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-image: inherit;
-  background-size: cover;
-<<<<<<< HEAD
-  -webkit-animation: anim 3s infinite ease-in;
-  -moz-animation: anim 3s infinite ease-in;
-  -ms-animation: anim 3s infinite ease-in;
-  animation: anim 3s infinite ease-in;
-}
-=======
-  -webkit-animation:anim 3s infinite ease-in;
-  -moz-animation:anim 3s infinite ease-in;
-  -ms-animation:anim 3s infinite ease-in;
-  animation:anim 3s infinite ease-in;
-}*/
->>>>>>> 12bee9147cd08ecd656dc6046b35a21bb92a3056
-
-
-/*.clip-text:after {
-  position: absolute;
-  z-index: -1;
-  top: .125em;
-  right: .125em;
-  bottom: .125em;
-  left: .125em;
-  background-color: #ffffff;
-}*/
-
-
-/*
-.clip-text_one {
-  background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/173024/wallpaper.jpg);
-  background-size: cover;
-  -webkit-animation:anim 3s infinite linear;
-  -moz-animation:anim 3s infinite ease-in;
-  -ms-animation:anim 3s infinite ease-in;
-  animation:anim 3s infinite ease-in;
-}*/
-
-@-webkit-keyframes anim {
-  0% {
-    background-position: top;
+    -webkit-animation: anim 4s infinite linear;
+    -moz-animation: anim 4s infinite ease-in;
+    -ms-animation: anim 4s infinite ease-in;
+    animation: anim 4s infinite ease-in;
   }
-  50% {
-    background-position: bottom;
-  }
-  100% {
-    background-position: top;
-  }
-}
 
-@-moz-keyframes anim {
-  0% {
-    background-position: top;
+  .hcenter {
+    text-align: center;
   }
-  50% {
-    background-position: bottom;
-  }
-  100% {
-    background-position: top;
-  }
-}
 
-@-ms-keyframes anim {
-  0% {
-    background-position: top;
+  .clip-text {
+    font-size: 90px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    margin: .25em;
+    padding: .5em .75em;
+    text-align: center;
+    color: #ffffff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    -ms-background-clip: text;
+    -ms-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
   }
-  50% {
-    background-position: bottom;
-  }
-  100% {
-    background-position: top;
-  }
-}
 
-@keyframes anim {
-  0% {
-    background-position: top;
+  @-webkit-keyframes anim {
+    0% {
+      background-position: top;
+    }
+    50% {
+      background-position: bottom;
+    }
+    100% {
+      background-position: top;
+    }
   }
-  50% {
-    background-position: bottom;
-  }
-  100% {
-    background-position: top;
-  }
-}
 
-.theBox {
-  font-size: 50px;
-  color: white;
-}
+  @-moz-keyframes anim {
+    0% {
+      background-position: top;
+    }
+    50% {
+      background-position: bottom;
+    }
+    100% {
+      background-position: top;
+    }
+  }
+
+  @-ms-keyframes anim {
+    0% {
+      background-position: top;
+    }
+    50% {
+      background-position: bottom;
+    }
+    100% {
+      background-position: top;
+    }
+  }
+
+  @keyframes anim {
+    0% {
+      background-position: top;
+    }
+    50% {
+      background-position: bottom;
+    }
+    100% {
+      background-position: top;
+    }
+  }
+
+  .theBox {
+    font-size: 50px;
+    color: white;
+  }
+
+  #viz {
+    height: 81vh;
+  }
