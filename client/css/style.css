@@ -1,46 +1,44 @@
 * {
-    -webkit-transition: all 0.45s ease 0s;
-    -moz-transition: all 0.45s ease 0s;
-    -ms-transition: all 0.45s ease 0s;
-    -o-transition: all 0.45s ease 0s;
-    transition: all 0.45s ease 0s;
+  -webkit-transition: all 0.45s ease 0s;
+  -moz-transition: all 0.45s ease 0s;
+  -ms-transition: all 0.45s ease 0s;
+  -o-transition: all 0.45s ease 0s;
+  transition: all 0.45s ease 0s;
 }
 
 text {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 footer {
-    /*height: 60px;*/
-    background-color: #CC3232;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+  /*height: 60px;*/
+  background-color: #CC3232;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
 .wcolor {
-    color: white;
+  color: white;
 }
 
 body {
-    background-color: #FF4C4C;
-    background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/173024/wallpaper.jpg);
-    background-size: cover;
-    -webkit-animation:anim 4s infinite linear;
-    -moz-animation:anim 4s infinite ease-in;
-    -ms-animation:anim 4s infinite ease-in;
-    animation:anim 4s infinite ease-in;∫
+  background-color: #FF4C4C;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/173024/wallpaper.jpg);
+  background-size: cover;
+  -webkit-animation: anim 4s infinite linear;
+  -moz-animation: anim 4s infinite ease-in;
+  -ms-animation: anim 4s infinite ease-in;
+  animation: anim 4s infinite ease-in;
 }
 
-.node:hover,
-.node:focus,
-.node:active {
-    width: 500px;
-    height: 500px;
+.node:hover, .node:focus, .node:active {
+  width: 500px;
+  height: 500px;
 }
 
 .hcenter {
-    text-align: center;
+  text-align: center;
 }
 
 .clip-text {
@@ -62,8 +60,7 @@ body {
   text-fill-color: transparent;
 }
 
-.clip-text:before,
-.clip-text:after {
+.clip-text:before, .clip-text:after {
   position: absolute;
   content: '';
 }
@@ -76,11 +73,12 @@ body {
   left: 0;
   background-image: inherit;
   background-size: cover;
-  -webkit-animation:anim 3s infinite ease-in;
-  -moz-animation:anim 3s infinite ease-in;
-  -ms-animation:anim 3s infinite ease-in;
-  animation:anim 3s infinite ease-in;
+  -webkit-animation: anim 3s infinite ease-in;
+  -moz-animation: anim 3s infinite ease-in;
+  -ms-animation: anim 3s infinite ease-in;
+  animation: anim 3s infinite ease-in;
 }
+
 
 /*.clip-text:after {
   position: absolute;
@@ -91,6 +89,8 @@ body {
   left: .125em;
   background-color: #ffffff;
 }*/
+
+
 /*
 .clip-text_one {
   background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/173024/wallpaper.jpg);
@@ -101,14 +101,53 @@ body {
   animation:anim 3s infinite ease-in;
 }*/
 
-@-webkit-keyframes anim
-{0%{background-position: top;}50%{background-position: bottom;}100%{background-position: top;}}
-@-moz-keyframes anim
-{0%{background-position: top;}50%{background-position: bottom;}100%{background-position: top;}}
-@-ms-keyframes anim
-{0%{background-position: top;}50%{background-position: bottom;}100%{background-position: top;}}
-@keyframes anim
-{0%{background-position: top;}50%{background-position: bottom;}100%{background-position: top;}}
+@-webkit-keyframes anim {
+  0% {
+    background-position: top;
+  }
+  50% {
+    background-position: bottom;
+  }
+  100% {
+    background-position: top;
+  }
+}
+
+@-moz-keyframes anim {
+  0% {
+    background-position: top;
+  }
+  50% {
+    background-position: bottom;
+  }
+  100% {
+    background-position: top;
+  }
+}
+
+@-ms-keyframes anim {
+  0% {
+    background-position: top;
+  }
+  50% {
+    background-position: bottom;
+  }
+  100% {
+    background-position: top;
+  }
+}
+
+@keyframes anim {
+  0% {
+    background-position: top;
+  }
+  50% {
+    background-position: bottom;
+  }
+  100% {
+    background-position: top;
+  }
+}
 
 .theBox {
   font-size: 50px;
