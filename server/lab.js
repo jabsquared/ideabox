@@ -1,34 +1,31 @@
-var hapi = require('hapi');
-var request = require('request');
+var socketio = require('socket.io');
+var restify = require('restify');
+var server = restify.createServer();
+var io = socketio.listen(server.server);
+var helena = require('./js/helena');
+var sideria = require('./js/sideria');
 
-// NOTE: Declare host and port
-var host = (process.env
-  .VCAP_APP_HOST || 'localhost');
-var port = (process.env
-  .VCAP_APP_PORT || 1314);
-
-var server = new hapi.Server();
-
-server.connection({
-  host: host,
-  port: port,
+server.listen(process.env.VCAP_APP_PORT || 1314, function() {
+  console.log('%s listening at %s', server.name, server.url);
 });
 
-var minerva = require('./modulas/minerva');
-
-server.route({
-  method: 'POST',
-  path: '/question',
-  handler: function(req, reply) {
-    var question = req.payload.Body;
-    var options = minerva.options(question);
-
-    request(options, function(error, response, body) {
-      reply(body);
-    });
-  }
-});
-
-server.start(function() {
-  console.log('Hapi on ' + host + ':' + port);
+io.sockets.on('connection', function(socket) {
+  // Define a helper function to return the count.
+  var emitCount = function(err, count) {
+    if (err || !count) {
+      return console.log(err);
+    }
+    if (count) {
+      io.sockets.emit('Population Changed', count);
+    }
+  };
+  socket.on('Image Clicked', function(data) {
+    // console.log(data);
+    if (!data) {
+      sideria.count(emitCount);
+      return;
+    }
+    sideria.countDown(emitCount);
+    helena.receive(data);
+  });
 });

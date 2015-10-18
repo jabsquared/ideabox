@@ -1,0 +1,8 @@
+Server:
+  ☐ Setup socket.io
+  ☐ Setup restify route
+  ☐ Test Insight Data
+
+Client:
+  ☐ Setup basic webapp
+  ☐ Setup circle bubble chart
