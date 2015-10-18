@@ -13,7 +13,7 @@
     .attr("height", diameter)
     .attr("class", "bubble");
 
-  d3.json("js/flare.json", function(error, root) {
+  d3.json("js/realdata.json", function(error, root) {
     if (error) throw error;
 
     var node = svg.selectAll(".node")
@@ -27,10 +27,6 @@
         return "translate(" + d.x + "," + d.y + ")";
       });
 
-    node.append("title")
-      .text(function(d) {
-        return d.className + ": " + format(d.value);
-      });
 
     node.append("circle")
       .attr("r", function(d) {
@@ -45,6 +41,7 @@
       .style("text-anchor", "middle")
       .text(function(d) {
         return d.className.substring(0, d.r / 3);
+
       });
   });
 
@@ -63,7 +60,7 @@
       });
     }
 
-    recurse(null, root);
+    recurse(name, root);
     return {
       children: classes
     };
