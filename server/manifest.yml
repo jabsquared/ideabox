@@ -1,0 +1,10 @@
+applications:
+- services:
+  name: ideabox
+  host: ideabox
+  command: nodemon lab.js
+  path: .
+  domain: mybluemix.net
+  instances: 1
+  memory: 512M
+  disk_quota: 512M
