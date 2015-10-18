@@ -5,11 +5,18 @@ String.prototype.capitalize = function() {
     });
 };
 
-function recapData(data, group) {
+function recapData(data, group, ne) {
   // body...
-  for (var i = 0; i < data.concepts.length; i++) {
+  data.connections = [];
+  for (var i =  ne ? 1:0; i < data.concepts.length; i++) {
     data.concepts[i].concept = data.concepts[i].concept.label;
     data.concepts[i].group = group;
+    if (group !== data.concepts[i].concept) {
+      data.connections[i] = {
+        "source": group,
+        "target": data.concepts[i].concept,
+      }
+    }
   }
   return data;
 }
@@ -32,6 +39,7 @@ function getData(word) {
           userData = js;
         } else {
           userData.concepts = userData.concepts.concat(js.concepts);
+          userData.connections = userData.connections.concat(js.connections);
         }
         render(userData);
       } else {
@@ -47,15 +55,16 @@ $(document)
     $('#submit-btn')
       .click(function() {
         // console.log("Click!");
-        getData($('#word').val());
+        getData($('#word')
+          .val());
       });
   });
-
 
 $(document.body)
   .delegate('input:text', 'keypress', function(e) {
     if (e.which === 13) { // if is enter
       e.preventDefault(); // don't submit form
-      getData($('#word').val());
+      getData($('#word')
+        .val());
     };
   });

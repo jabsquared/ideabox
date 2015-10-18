@@ -1,18 +1,22 @@
-var render = function(json_data) {
+var render = function(data) {
 
   // instantiate d3plus
   var visualization = d3plus.viz()
     .container("#viz") // container DIV to hold the visualization
-    .data(json_data.concepts) // data to use with the visualization
+    .data(data.concepts) // data to use with the visualization
     .type("bubbles") // visualization type
+    // .type("network")
     .id(["group", "concept"]) // nesting keys
     .depth(1) // 0-based depth
+    // .edges(data.connections)
     .size("score") // key name to size bubbles
     .color("concept") // color by each group
     .draw() // finally, draw the visualization!
     .mouse({
       "click": function(d, viz) {
         // console.log(d);
+        // getData(d.concept, true);
+
         $.get("https://ideabox.mybluemix.net/i/" +
           d.concept.split(' ')
           .join('_'),
@@ -29,7 +33,8 @@ var render = function(json_data) {
             } else {
               alert("NOT FOUND!");
             }
-          });
+          }
+        );
       },
     })
 };
