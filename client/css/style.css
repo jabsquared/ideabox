@@ -29,7 +29,7 @@ body {
     -webkit-animation:anim 4s infinite linear;
     -moz-animation:anim 4s infinite ease-in;
     -ms-animation:anim 4s infinite ease-in;
-    animation:anim 4s infinite ease-in;∫
+    animation:anim 4s infinite ease-in;
 }
 
 .node:hover,
@@ -62,12 +62,12 @@ body {
   text-fill-color: transparent;
 }
 
-.clip-text:before,
+/*.clip-text:before,
 .clip-text:after {
   position: absolute;
   content: '';
-}
-
+}*/
+/*
 .clip-text:before {
   z-index: -2;
   top: 0;
@@ -80,7 +80,7 @@ body {
   -moz-animation:anim 3s infinite ease-in;
   -ms-animation:anim 3s infinite ease-in;
   animation:anim 3s infinite ease-in;
-}
+}*/
 
 /*.clip-text:after {
   position: absolute;
