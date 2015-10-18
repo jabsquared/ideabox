@@ -7,14 +7,14 @@ String.prototype.capitalize = function() {
 $(document).ready(function() {
   var word;
   $('#submit-btn').click(function() {
-    console.log("Click!");
+    // console.log("Click!");
     word = $('#word').val();
 
     $.get("https://ideabox.mybluemix.net/p/" +
         word.capitalize(), function(data) {
-        console.log(data);
+        // console.log(data);
+        data = JSON.parse(data);
+        render(data);
     });
-
-    console.log(word);
   });
 });
