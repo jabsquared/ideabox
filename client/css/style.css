@@ -23,6 +23,7 @@ footer {
 }
 
 body {
+<<<<<<< HEAD
   background-color: #FF4C4C;
   background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/173024/wallpaper.jpg);
   background-size: cover;
@@ -30,6 +31,15 @@ body {
   -moz-animation: anim 4s infinite ease-in;
   -ms-animation: anim 4s infinite ease-in;
   animation: anim 4s infinite ease-in;
+=======
+    background-color: #FF4C4C;
+    background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/173024/wallpaper.jpg);
+    background-size: cover;
+    -webkit-animation:anim 4s infinite linear;
+    -moz-animation:anim 4s infinite ease-in;
+    -ms-animation:anim 4s infinite ease-in;
+    animation:anim 4s infinite ease-in;
+>>>>>>> 12bee9147cd08ecd656dc6046b35a21bb92a3056
 }
 
 .node:hover, .node:focus, .node:active {
@@ -60,11 +70,16 @@ body {
   text-fill-color: transparent;
 }
 
+<<<<<<< HEAD
 .clip-text:before, .clip-text:after {
+=======
+/*.clip-text:before,
+.clip-text:after {
+>>>>>>> 12bee9147cd08ecd656dc6046b35a21bb92a3056
   position: absolute;
   content: '';
-}
-
+}*/
+/*
 .clip-text:before {
   z-index: -2;
   top: 0;
@@ -73,11 +88,19 @@ body {
   left: 0;
   background-image: inherit;
   background-size: cover;
+<<<<<<< HEAD
   -webkit-animation: anim 3s infinite ease-in;
   -moz-animation: anim 3s infinite ease-in;
   -ms-animation: anim 3s infinite ease-in;
   animation: anim 3s infinite ease-in;
 }
+=======
+  -webkit-animation:anim 3s infinite ease-in;
+  -moz-animation:anim 3s infinite ease-in;
+  -ms-animation:anim 3s infinite ease-in;
+  animation:anim 3s infinite ease-in;
+}*/
+>>>>>>> 12bee9147cd08ecd656dc6046b35a21bb92a3056
 
 
 /*.clip-text:after {
