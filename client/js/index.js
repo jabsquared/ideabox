@@ -28,7 +28,9 @@
   var vis = svg.selectAll('circle')
 					.data(nodes);
 
-  vis.enter().append('circle')
+  vis.enter()
+      .append('circle')
+      // .append('title')
 			.attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; })
 			.attr('r', function(d) { return d.r; })
 			.attr('class', function(d) { return d.className; });
