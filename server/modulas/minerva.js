@@ -25,7 +25,7 @@ if (secret.url !== 'lab') {
 
 exports.getConcepts = function(concept, limit, callback) {
   //v2/graphs/wikipedia/en-20120601/concepts/Banana/related_concepts?level=0&limit=10
-  var url = secret.url + '/v2/graphs/wikipedia/en-20120601/concepts/' + concept + '/related_concepts?level=0&limit=' + limit;
+  var url = secret.url + '/v2/graphs/wikipedia/en-20120601/concepts/' + concept + '/related_concepts?level=3&limit=' + limit;
 
   request({
     url: url,
