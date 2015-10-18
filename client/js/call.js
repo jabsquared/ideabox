@@ -13,6 +13,33 @@ function recapData(data, group) {
   }
   return data;
 }
+
+function getData(word) {
+  // body...
+
+  $.get("https://ideabox.mybluemix.net/p/" +
+    word.capitalize()
+    .split(' ')
+    .join('_'),
+    function(data) {
+      // data = JSON.parse(data);
+      // console.log(JSON.parse(data));
+      var js = JSON.parse(data, word);
+      console.log(js);
+      if (!js.error) {
+        js = recapData(js, word);
+        if (!userData) {
+          userData = js;
+        } else {
+          userData.concepts = userData.concepts.concat(js.concepts);
+        }
+        render(userData);
+      } else {
+        alert("NOT FOUND!");
+      }
+    });
+}
+
 var userData;
 
 $(document)
@@ -20,30 +47,7 @@ $(document)
     $('#submit-btn')
       .click(function() {
         // console.log("Click!");
-        var word = $('#word')
-          .val();
-
-        $.get("https://ideabox.mybluemix.net/p/" +
-          word.capitalize()
-          .split(' ')
-          .join('_'),
-          function(data) {
-            // data = JSON.parse(data);
-            // console.log(JSON.parse(data));
-            var js = JSON.parse(data, word);
-            console.log(js);
-            if (!js.error) {
-              js = recapData(js, word);
-              if (!userData) {
-                userData = js;
-              } else {
-                userData.concepts = userData.concepts.concat(js.concepts);
-              }
-              render(userData);
-            } else {
-              alert("NOT FOUND!");
-            }
-          });
+        getData($('#word').val());
       });
   });
 
@@ -52,30 +56,6 @@ $(document.body)
   .delegate('input:text', 'keypress', function(e) {
     if (e.which === 13) { // if is enter
       e.preventDefault(); // don't submit form
-      var word = $('#word')
-        .val();
-
-      $.get("https://ideabox.mybluemix.net/p/" +
-
-        word.capitalize()
-        .split(' ')
-        .join('_'),
-        function(data) {
-          // data = JSON.parse(data);
-          // console.log(JSON.parse(data));
-          var js = JSON.parse(data);
-          console.log(js);
-          if (!js.error) {
-            js = recapData(js, word);
-            if (!userData) {
-              userData = js;
-            } else {
-              userData.concepts = userData.concepts.concat(js.concepts);
-            }
-            render(userData);
-          } else {
-            alert("NOT FOUND!");
-          }
-        });
+      getData($('#word').val());
     };
   });

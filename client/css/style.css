@@ -111,3 +111,7 @@
   #viz {
     height: 81vh;
   }
+
+  p {
+    text-align: justify;
+  }

@@ -12,7 +12,7 @@ var render = function(json_data) {
     .draw() // finally, draw the visualization!
     .mouse({
       "click": function(d, viz) {
-        console.log(d);
+        // console.log(d);
         $.get("https://ideabox.mybluemix.net/i/" +
           d.concept.split(' ')
           .join('_'),
@@ -22,11 +22,14 @@ var render = function(json_data) {
             var js = JSON.parse(data);
             console.log(js);
             if (!js.error) {
-              alert(js.abstract);
+              // alert(js.abstract);
+              $('#myModal').find('.modal-title').text(d.concept);
+              $('#myModal').find('p').text(js.abstract)
+              $('#myModal').modal('show');
             } else {
               alert("NOT FOUND!");
             }
           });
-      }
+      },
     })
 };
