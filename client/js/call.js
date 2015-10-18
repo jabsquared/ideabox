@@ -22,12 +22,17 @@ $(document)
             // data = JSON.parse(data);
             // console.log(JSON.parse(data));
             var js = JSON.parse(data);
-            if (!userData){
-              userData = js;
+            console.log(js);
+            if (!js.error) {
+              if (!userData) {
+                userData = js;
+              } else {
+                userData.concepts = userData.concepts.concat(js.concepts);
+              }
+              render(userData);
             } else {
-              userData.concepts = userData.concepts.concat(js.concepts);
+              alert("NOT FOUND!");
             }
-            render(userData);
           });
       });
   });
