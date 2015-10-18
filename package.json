@@ -1,0 +1,21 @@
+{
+  "name": "ideabox",
+  "version": "1.0.0",
+  "description": "concepts in a box",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jabsquared/ideabox.git"
+  },
+  "author": "jabSquared",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jabsquared/ideabox/issues"
+  },
+  "homepage": "https://github.com/jabsquared/ideabox#readme",
+  "dependencies": {
+     }
+}

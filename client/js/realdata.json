@@ -1,0 +1,22 @@
+{
+    "name": "conceptualize",
+    "children": [{
+        "score": 0.9998348,
+        "concept": {
+            "id": "/graphs/wikipedia/en-20120601/concepts/Banana",
+            "name": "Banana"
+        }
+    }, {
+        "score": 0.498,
+        "concept": {
+            "id": "/graphs/wikipedia/en-20120601/concepts/Districts_of_Madagascar",
+            "label": "Districts of Madagascar"
+        }
+    }, {
+        "score": 0.9161707,
+        "concept": {
+            "id": "/graphs/wikipedia/en-20120601/concepts/Regions_of_Madagascar",
+            "label": "Regions of Madagascar"
+        }
+    }]
+}
